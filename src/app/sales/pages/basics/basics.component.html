@@ -1,1 +1,68 @@
-<p>basics works!</p>
+<div class="text-layout">
+    <h1>Basic Pipes</h1>
+    <p>
+        Pipes included on Angular - Commong Module
+    </p>
+</div>
+<div class="grid">
+    <div class="col-4">
+        <p-card header="{{'uppercase' | uppercase }}" [subheader]="nameLower">
+            Original: {{nameLower}} - Pipe transform: {{nameLower | uppercase}}
+        </p-card>
+    </div>
+    <div class="col-4">
+        <p-card header="{{'lowercase' | lowercase }}" [subheader]="nameUpper">
+            Original: {{nameUpper}} - Pipe transform: {{nameUpper | lowercase}}
+        </p-card>
+    </div>
+    <div class="col-4">
+        <p-card header="{{'titlecase' | titlecase }}" [subheader]="fullName">
+            Original: {{fullName}} - Pipe transform: {{fullName | titlecase}}
+        </p-card>
+    </div>
+</div>
+<div class="text-layout">
+    <h1>Date | Pipe </h1>
+    <p>
+        Pipes for show dates on Angular.
+    </p>
+</div>
+
+<div class="grid">
+    <div class="col-4">
+        <p-card>
+            <ul>
+                <li>Date original</li>
+                <li>Date with pipe | date</li>
+                <li>Date with pipe short | date:'short'</li>
+                <li>Date with pipe long | date:'long'</li>
+                <li>Date with pipe custom | date:'customDate dd MMMM, yyyy'</li>
+            </ul>
+            <hr>
+            <ul>
+                <li>Date with pipe long + custom timezone | date:'long':GMT-6</li>
+                <li>Date with pipe long + custom timezone | date:'long':GMT-4</li>
+                <li>Date with pipe long + custom language | date:'long':'':'fr'</li>
+            </ul>
+        </p-card>
+    </div>
+    <div class="col-8">
+        <p-card>
+            <ul>
+                <li>original: {{date}}</li>
+                <li>{{date | date}}</li>
+                <li>{{date | date:'short'}}</li>
+                <li>{{date | date:'long'}}</li>
+                <li>{{date | date:'dd MMMM, yyyy'}}</li>
+                <li>{{date | date:'dd MMMM, yyyy'}}</li>
+            </ul>
+            <small>*Dates are displayed in spanish due to registerLocaleData import (see app.module for more information)</small>
+            <hr>
+            <ul>
+                <li>{{date | date:'long':'GMT-6'}}</li>
+                <li>{{date | date:'long':'GMT-4'}}</li>
+                <li>{{date | date:'long':'':'fr'}}</li>
+            </ul>
+        </p-card>
+    </div>
+</div>
