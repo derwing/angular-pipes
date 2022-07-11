@@ -41,7 +41,7 @@
 
 <div class="grid justify-content-center">
     <div class="col-11 mt-2">
-        <p-table [value]="heroes">
+        <p-table [value]="heroes | slice:0">
             <ng-template pTemplate="header">
                 <tr>
                     <th pSortableColumn="name">Name
