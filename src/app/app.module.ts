@@ -1,9 +1,11 @@
 import { AppComponent } from './app.component';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRouterModule } from './app-router.module';
 import { SharedModule } from './shared/shared.module';
 import { SalesModule } from './sales/sales.module';
+
 
 // Change locale app
 import localeES from '@angular/common/locales/es-CO';
@@ -21,7 +23,8 @@ registerLocaleData(localeFR);
     BrowserModule,
     AppRouterModule,
     SharedModule,
-    SalesModule
+    SalesModule,
+    BrowserAnimationsModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'es-CO' }

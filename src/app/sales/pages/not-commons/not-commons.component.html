@@ -1,1 +1,71 @@
-<p>not-commons works!</p>
+<div class="text-layout">
+    <h1>No commons angular pipes</h1>
+    <p>
+        Pipes incluide in Angular - Commong Module
+    </p>
+</div>
+
+<div class="grid">
+    <div class="col-12 md:col-6 lg:col-6">
+        <p-fieldset legend="i18nSelect Pipe" [toggleable]="true" [transitionOptions]="'250ms'">
+            <p>Change text based on gender;
+                <br> Saludos, <span class="text-primary fw-bold">{{name}} - {{gender}} </span> es un placer <span class="text-primary fw-bold"> {{gender |
+                    i18nSelect:invitationMap }}!</span>
+                <br>
+            </p>
+            <button pButton type="button" class="p-button-raised p-button-rounded p-button-help" (click)="changeName()">Change
+                name</button>
+        </p-fieldset>
+    </div>
+    <div class="col-12 md:col-6 lg:col-6">
+        <p-fieldset legend="i18nPlural Pipe" [toggleable]="true" [transitionOptions]="'250ms'">
+            <p>Change text based on singular/plurar context;
+                <br> Clients: <span *ngFor="let client of clients" class="text-primary">{{ client }} </span>
+                <br> Actually <span class="text-primary fw-bold">{{clients.length| i18nPlural:clientMaps}}</span>
+                <br>
+            </p>
+            <button pButton type="button" class="p-button-raised p-button-rounded p-button-danger" (click)="removeClients()">
+                Remove client
+            </button>
+        </p-fieldset>
+    </div>
+
+    <div class="col-12 md:col-6 lg:col-6">
+        <p-fieldset legend="Slice Pipe" [toggleable]="true" [transitionOptions]="'250ms'">
+            <p>Cut content using slice pipe;</p>
+            <b>Original</b>
+            <pre>{{clients}}</pre>
+            <b>Slice 0:2</b>
+            <pre>{{clients | slice:0:2}}</pre>
+            <b>Slice 1:2</b>
+            <pre>{{clients | slice:1:2}}</pre>
+            <b>Slice string 0:4</b>
+            <pre>{{name | slice:0:3}}</pre>
+        </p-fieldset>
+    </div>
+
+    <div class="col-12 md:col-6 lg:col-6">
+        <p-fieldset legend="Json Pipe" [toggleable]="true" [transitionOptions]="'250ms'">
+            <pre>{{heroes | json}}</pre>
+        </p-fieldset>
+    </div>
+
+    <div class="col-12 md:col-6 lg:col-6">
+        <p-fieldset legend="KeyValue Pipe" [toggleable]="true" [transitionOptions]="'250ms'">
+            <ul>
+                <li *ngFor="let item of people | keyvalue"><b>{{item.key | titlecase}}:</b> {{item.value}}</li>
+            </ul>
+        </p-fieldset>
+    </div>
+
+    <div class="col-12 md:col-6 lg:col-6">
+        <p-fieldset legend="Async Pipe" [toggleable]="true" [transitionOptions]="'250ms'">
+            <pre *ngIf="!(myObservable | async)" class="animate__animated animate__flash">Resolving oobservable...</pre>
+            <pre>{{myObservable | async}}</pre>
+            <pre *ngIf="!(promiseValue | async)" class="animate__animated animate__flash animate__infinite	infinite">Resolving promise...</pre>
+            <pre>{{promiseValue | async }}</pre>
+        </p-fieldset>
+    </div>
+
+
+</div>
